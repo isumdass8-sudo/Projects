@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1a2332;
+  --navy-light: #243044;
+  --navy-muted: #3d5068;
+  --amber: #f59e0b;
+  --amber-light: #fbbf24;
+  --canvas: #f8f7f4;
+  --card: #ffffff;
+  --text-primary: #1a2332;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border: #e8e4df;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--canvas);
+  color: var(--text-primary);
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+
+.dark {
+  --canvas: #0f1623;
+  --card: #1a2332;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: #243044;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+.spine-blue   { border-left: 4px solid #3b82f6; }
+.spine-green  { border-left: 4px solid #10b981; }
+.spine-purple { border-left: 4px solid #8b5cf6; }
+.spine-amber  { border-left: 4px solid #f59e0b; }
+.spine-rose   { border-left: 4px solid #f43f5e; }
+.spine-teal   { border-left: 4px solid #14b8a6; }

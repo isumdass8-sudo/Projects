@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const { getOverview, getMonthlyTrends, getPopularBooks, getIssueStatus, getReport } = require('../controllers/stats.controller');
+const { requireAuth, requireRole } = require('../middleware/auth.middleware');
+const libOnly = [requireAuth, requireRole('librarian', 'super_admin')];
+router.get('/overview',       ...libOnly, getOverview);
+router.get('/monthly-trends', ...libOnly, getMonthlyTrends);
+router.get('/popular-books',  ...libOnly, getPopularBooks);
+router.get('/issue-status',   ...libOnly, getIssueStatus);
+router.get('/report',         ...libOnly, getReport);
+module.exports = router;
