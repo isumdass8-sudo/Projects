@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper text-ink font-body;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* Departure-board style readout, used for the nearest-ATM result -
+   a nod to Sri Lanka's bus/train station boards, fitting for a
+   navigation-focused app. */
+.board {
+  background: radial-gradient(circle at top left, #102d2e, #060f10 85%);
+  color: #E7C351;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.03em;
+}
+
+.board-flicker {
+  animation: flicker 2.4s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%, 92%, 100% { opacity: 1; }
+  94% { opacity: 0.85; }
+  96% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .board-flicker { animation: none; }
+}
+
+/* Leaflet container needs an explicit height */
+.leaflet-map {
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+}
